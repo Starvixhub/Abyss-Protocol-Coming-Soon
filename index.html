@@ -1,0 +1,168 @@
+<!--
+  ABYSS PROTOCOL // COMING SOON
+  Copyright (c) 2026 Sina Rezaei
+  Licensed under the MIT License. See LICENSE.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT ABYSS // COMING SOON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="abyss" id="abyss">
+    <canvas id="ocean"></canvas>
+    <div class="vignette"></div>
+    <div class="scanlines"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="facility">
+      <div class="window-grid"></div>
+      <div class="facility-light light-a"></div>
+      <div class="facility-light light-b"></div>
+      <div class="facility-light light-c"></div>
+      <div class="creature creature-a"></div>
+      <div class="creature creature-b"></div>
+      <div class="creature creature-c"></div>
+    </div>
+
+    <div class="glass-reflection"></div>
+
+    <section class="hud" id="hud">
+      <aside class="panel left-panel">
+        <div class="eyebrow">DEEP OCEAN RESEARCH DIVISION</div>
+        <div class="project-code">P-ABYSS / 001</div>
+
+        <div class="title-stack">
+          <span>PROJECT</span>
+          <h1>ABYSS</h1>
+          <div class="coming">COMING <strong>SOON</strong></div>
+        </div>
+
+        <div class="mission-block">
+          <div class="section-label">MISSION 001</div>
+          <div class="mission-line"><span>STATUS</span><b>INITIALIZING</b></div>
+          <div class="mission-line"><span>DEPTH</span><b>8,421M</b></div>
+          <div class="mission-line"><span>PRESSURE</span><b class="pressure">WARNING</b></div>
+          <div class="mission-line"><span>OXYGEN</span><b>96.8%</b></div>
+        </div>
+
+        <div class="countdown">
+          <div class="section-label">COUNTDOWN TO SURFACE SIGNAL</div>
+          <div class="timer">
+            <span id="days">07</span><i>:</i>
+            <span id="hours">19</span><i>:</i>
+            <span id="minutes">42</span><i>:</i>
+            <span id="seconds">16</span>
+          </div>
+          <div class="timer-labels"><span>DAYS</span><span>HRS</span><span>MIN</span><span>SEC</span></div>
+        </div>
+
+        <button class="audio-control" id="audioToggle">
+          <span class="audio-icon"><i></i><i></i><i></i><i></i></span>
+          <span>SONAR AUDIO</span>
+          <small>OFF</small>
+        </button>
+
+        <div class="left-footer">
+          <span>SECURE CHANNEL</span>
+          <span>ENCRYPTED // 07</span>
+        </div>
+      </aside>
+
+      <section class="center-field">
+        <div class="depth-readout">
+          <span>DEPTH</span>
+          <strong id="depth">8421</strong><small>M</small>
+        </div>
+
+        <div class="sonar-wrap">
+          <div class="sonar">
+            <div class="sonar-ring ring-1"></div>
+            <div class="sonar-ring ring-2"></div>
+            <div class="sonar-ring ring-3"></div>
+            <div class="sonar-cross horizontal"></div>
+            <div class="sonar-cross vertical"></div>
+            <div class="sonar-sweep"></div>
+            <div class="sonar-origin"></div>
+
+            <div class="target target-a"><span></span><b>BIOL. 07</b></div>
+            <div class="target target-b"><span></span><b>UNKNOWN</b></div>
+            <div class="target target-c"><span></span><b>OBJECT</b></div>
+          </div>
+        </div>
+
+        <div class="researcher" id="researcher">
+          <div class="helmet">
+            <div class="helmet-glass"></div>
+            <div class="helmet-light"></div>
+          </div>
+          <div class="suit-body">
+            <div class="chest-core"></div>
+            <div class="suit-line line-1"></div>
+            <div class="suit-line line-2"></div>
+          </div>
+          <div class="arm arm-left"></div>
+          <div class="arm arm-right"></div>
+          <div class="leg leg-left"></div>
+          <div class="leg leg-right"></div>
+          <div class="oxygen-line"></div>
+        </div>
+
+        <div class="bio-scan scan-one"><span>SPECIMEN</span><b>???</b></div>
+        <div class="bio-scan scan-two"><span>RANGE</span><b>2.8KM</b></div>
+
+        <div class="center-status">
+          <span class="dot"></span>
+          LIVE ENVIRONMENTAL FEED
+        </div>
+      </section>
+
+      <aside class="panel right-panel">
+        <div class="right-top">
+          <span>FACILITY 07</span>
+          <span>NO SURFACE LINK</span>
+        </div>
+
+        <div class="vertical-word">ABYSS</div>
+
+        <div class="scientific-stack">
+          <div><span>01</span><b>PROTOCOL</b><em>BLACK WATER</em></div>
+          <div><span>02</span><b>UNKNOWN</b><em>CONTACT LOST</em></div>
+          <div><span>03</span><b>SIGNAL</b><em>DETECTING</em></div>
+          <div><span>04</span><b>PRESSURE</b><em>CRITICAL ZONE</em></div>
+        </div>
+
+        <div class="vertical-progress">
+          <span class="progress-track"><i id="progress"></i></span>
+          <div class="progress-text"><b id="progressValue">73</b><small>%</small></div>
+        </div>
+
+        <div class="coordinates">
+          <span>LAT  41° 22' 08.2" S</span>
+          <span>LON  147° 01' 19.7" W</span>
+          <span>SECTOR  /  NULL-09</span>
+        </div>
+      </aside>
+    </section>
+
+    <div class="top-meta">
+      <span>OCEANIC AUTHORITY / CLASSIFIED</span>
+      <span id="clock">00:00:00 UTC</span>
+    </div>
+
+    <div class="bottom-meta">
+      <span>© 2097 ABYSS RESEARCH PROGRAM</span>
+      <span>DO NOT TRANSMIT</span>
+    </div>
+
+    <div class="warning-flash">PRESSURE ANOMALY DETECTED</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
